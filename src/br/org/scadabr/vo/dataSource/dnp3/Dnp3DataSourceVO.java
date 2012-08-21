@@ -161,16 +161,16 @@ abstract public class Dnp3DataSourceVO<T extends Dnp3DataSourceVO<?>> extends Da
 
     @Override
     protected void addPropertyChangesImpl(List<LocalizableMessage> list, T from) {
-        AuditEventType.maybeAddPeriodChangeMessage(list, "dsEdit.dnp3.rbePeriod", from.rbePeriodType,
-                from.rbePollPeriods, rbePeriodType, rbePollPeriods);
-        AuditEventType.maybeAddPropertyChangeMessage(list, "dsEdit.dnp3.synchPeriod", from.synchPeriods, synchPeriods);
-        AuditEventType.maybeAddPropertyChangeMessage(list, "dsEdit.dnp3.staticPeriod", from.staticPollPeriods,
+        AuditEventType.maybeAddPeriodChangeMessage(list, "dsEdit.dnp3.rbePeriod", from.getRbePeriodType(),
+                from.getRbePollPeriods(), rbePeriodType, rbePollPeriods);
+        AuditEventType.maybeAddPropertyChangeMessage(list, "dsEdit.dnp3.synchPeriod", from.getSynchPeriods(), synchPeriods);
+        AuditEventType.maybeAddPropertyChangeMessage(list, "dsEdit.dnp3.staticPeriod", from.getStaticPollPeriods(),
                 staticPollPeriods);
-        AuditEventType.maybeAddPropertyChangeMessage(list, "dsEdit.dnp3.sourceAddress", from.sourceAddress,
+        AuditEventType.maybeAddPropertyChangeMessage(list, "dsEdit.dnp3.sourceAddress", from.getSourceAddress(),
                 sourceAddress);
-        AuditEventType.maybeAddPropertyChangeMessage(list, "dsEdit.dnp3.slaveAddress", from.slaveAddress, slaveAddress);
-        AuditEventType.maybeAddPropertyChangeMessage(list, "dsEdit.dnp3.retries", from.retries, retries);
-        AuditEventType.maybeAddPropertyChangeMessage(list, "dsEdit.modbus.retries", from.retries, retries);
+        AuditEventType.maybeAddPropertyChangeMessage(list, "dsEdit.dnp3.slaveAddress", from.getSlaveAddress(), slaveAddress);
+        AuditEventType.maybeAddPropertyChangeMessage(list, "dsEdit.dnp3.retries", from.getRetries(), retries);
+        AuditEventType.maybeAddPropertyChangeMessage(list, "dsEdit.modbus.retries", from.getRetries(), retries);
     }
 
     private static final long serialVersionUID = -1;

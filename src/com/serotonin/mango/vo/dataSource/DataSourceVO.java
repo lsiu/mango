@@ -431,9 +431,9 @@ abstract public class DataSourceVO<T extends DataSourceVO<?>> implements Seriali
 
     @Override
     public final void addPropertyChanges(List<LocalizableMessage> list, T from) {
-        AuditEventType.maybeAddPropertyChangeMessage(list, "dsEdit.head.name", from.name, name);
-        AuditEventType.maybeAddPropertyChangeMessage(list, "common.xid", from.xid, xid);
-        AuditEventType.maybeAddPropertyChangeMessage(list, "common.enabled", from.enabled, enabled);
+        AuditEventType.maybeAddPropertyChangeMessage(list, "dsEdit.head.name", from.getName(), name);
+        AuditEventType.maybeAddPropertyChangeMessage(list, "common.xid", from.getXid(), xid);
+        AuditEventType.maybeAddPropertyChangeMessage(list, "common.enabled", from.isEnabled(), enabled);
 
         addPropertyChangesImpl(list, from);
     }
